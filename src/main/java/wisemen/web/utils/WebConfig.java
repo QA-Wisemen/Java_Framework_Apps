@@ -2,6 +2,7 @@ package wisemen.web.utils;
 
 import wisemen.common.JSONHelper;
 
+//This class gets all the information out of the web config file
 public class WebConfig {
     private static final String webConfigFile = "src/main/java/*/webConfig.json";
 

@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+
+//Set-up for a basic web page
 public class BasePage {
     protected WebDriver driver;
     private String baseUrl;
