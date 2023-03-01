@@ -3,7 +3,7 @@ package wisemen.mobile.utils;
 import wisemen.common.JSONHelper;
 
 public class MobileConfig {
-    private static final String mobileConfigFile = "src/main/java/*/mobile/mobileConfig.json";
+    private static final String mobileConfigFile = "src/main/java/wisemen/mobile/mobileConfig.json";
 
     public static String getDeviceName(){
         return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "deviceName");
@@ -31,6 +31,10 @@ public class MobileConfig {
 
     public static String getAppPackage() {
         return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "appPackage");
+    }
+
+    public static String getApp() {
+        return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "app");
     }
 
     public static String getAppiumURL() {

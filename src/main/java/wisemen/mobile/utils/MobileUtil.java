@@ -23,9 +23,11 @@ public class MobileUtil {
 
     public static AndroidDriver createDriverWithApp(){
         DesiredCapabilities desiredCapabilities = getMandatoryCapabilities();
-        desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, MobileConfig.getAppPackage());
-        desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, MobileConfig.getAppActivity());
-
+        //desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, MobileConfig.getAppPackage());
+        //desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, MobileConfig.getAppActivity());
+        desiredCapabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
+        desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, false);
+        desiredCapabilities.setCapability(MobileCapabilityType.APP, MobileConfig.getApp());
         try {
             return new AndroidDriver(new URL(MobileConfig.getAppiumURL()), desiredCapabilities);
         } catch (MalformedURLException e) {

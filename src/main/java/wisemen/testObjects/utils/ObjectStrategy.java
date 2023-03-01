@@ -11,12 +11,10 @@ public class ObjectStrategy {
 
     public static IAllObjects createTestObject(String testObject){
 
-        switch (testObject){
-            case "web":
-                return new AllPages();
-            case "mobile":
-                return new AllScreens();
-        }
-        return null;
+        return switch (testObject) {
+            case "web" -> new AllPages();
+            case "mobile" -> new AllScreens();
+            default -> null;
+        };
     }
 }
