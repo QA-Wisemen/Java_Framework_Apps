@@ -1,5 +1,6 @@
 package wisemen.mobile.screenObjects;
 
+import io.appium.java_client.android.AndroidDriver;
 import wisemen.mobile.utils.MobileUtil;
 import wisemen.testObjects.objects.IAllObjects;
 import wisemen.testObjects.objects.ILoginObject;

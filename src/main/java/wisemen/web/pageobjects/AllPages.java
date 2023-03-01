@@ -1,10 +1,11 @@
 package wisemen.web.pageobjects;
 
 import org.openqa.selenium.WebDriver;
+import wisemen.testObjects.objects.IAllObjects;
 import wisemen.testObjects.objects.ILoginObject;
 import wisemen.web.utils.BrowserUtil;
 
-public class AllPages {
+public class AllPages implements IAllObjects {
     public LoginPage loginPage;
     private WebDriver driver;
 

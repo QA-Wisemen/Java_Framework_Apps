@@ -1,0 +1,6 @@
+{
+  "defaultBrowser": "chrome",
+  "defaultTimeout": "5",
+  "baseUrl": "https://wisemen.com",
+  "loginEndpoint": "/login"
+}

@@ -1,0 +1,10 @@
+{
+  "deviceName": "Pixel",
+  "platformName": "Android",
+  "platformVersion": "12",
+  "chromeDriverExecutable": "C:\\dependencies\\chromedriver\\91\\chromedriver.exe",
+  "browsername": "Chrome",
+  "appiumURL": "http://localhost:4723/wd/hub/",
+  "baseUrl": "https://wisemen.com",
+  "loginEndpoint": "/login"
+}
