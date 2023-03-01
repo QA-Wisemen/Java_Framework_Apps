@@ -13,6 +13,7 @@ public class AllScreens implements IAllObjects {
     public SignUpScreen signUpScreen;
 
 
+    //An allScreens object wil make it possible to refer to all the screens from your tests without the hassle of importing them one by one.
     public AllScreens() {
         //driver = MobileUtil.createDriverWithBrowser();
         driver = MobileUtil.createDriverWithApp();

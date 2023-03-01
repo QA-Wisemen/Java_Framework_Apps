@@ -2,6 +2,7 @@ package wisemen.mobile.utils;
 
 import wisemen.common.JSONHelper;
 
+//This class gets all the information out of the mobile config file
 public class MobileConfig {
     private static final String mobileConfigFile = "src/main/java/wisemen/mobile/mobileConfig.json";
 

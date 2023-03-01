@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+//Set-up for a basic screen
 public class BaseScreen {
     protected AndroidDriver driver;
     protected String url;
