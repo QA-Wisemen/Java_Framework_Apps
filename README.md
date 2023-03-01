@@ -10,10 +10,10 @@
 
 ## Test set-up
 - Every test gets the '@Test' annotation
-- Test can be further configured, configurations can be combined and are seperated by a ,
+- Test can be further configured, configurations can be combined and are seperated by a , Here are some configurations that are the most usefull. Other configurations are also possible.
    -  @Test(description="...") provides information about tests
    -  @Test(timeout=...) sets a timeout how long the test case can run beforeautomatically failing (in milliseconds)
-   -  @Test(priority=...) sets the priority for a test case, the lower the number, the higher thepriority (0 = highest priority)No priority set automatically sets it to 0
+   -  @Test(priority=...) sets the priority for a test case, the lower the number, the higher the priority (0 = highest priority) No priority set automatically sets it to 0
    -  @Test(dependsOnMethods-="...") sets a prerequisite for the current test, it will not be executed beforethe other method is executed.
    -  @Test(enabled=...) enables or disables a test (can be true or false)
    -  @Test(groups="...") tags a test case, grouping them together
