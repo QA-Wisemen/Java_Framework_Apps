@@ -5,7 +5,7 @@
 - Comments are provided in the code for specific explanations
 - Some basic flows from apps are already provided to speed up testing. Or te be used as examples for other tests.
 - Android apps can only be tested with emulators that have the Google Playstore installed
-- Link naar [Appium](https://appium.io/docs/en/about-appium/intro/) documentatie
+- Link to the [Appium](https://appium.io/docs/en/about-appium/intro/) documentation and that from [Selenium](https://www.selenium.dev/documentation/)
 
 ## Running tests
 
