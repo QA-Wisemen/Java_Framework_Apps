@@ -1,7 +1,9 @@
 # Java Framework
 
 ## General
-Comments are provided in the code for specific explanations
+- Framework can be used for web and mobile testing
+- Comments are provided in the code for specific explanations
+- Some basic flows from apps are already provided to speed up testing. Or te be used as examples for other tests.
 
 ## Waiting in tests
 - tread.sleep(miliseconds) --> Is a hard coded way that always works but not great to use
