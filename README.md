@@ -1,4 +1,4 @@
-# Java Framework
+# QA: Framework for Automated Testing in Java
 
 ## General
 - Framework can be used for web and mobile testing
