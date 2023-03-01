@@ -3,7 +3,7 @@ package wisemen.web.utils;
 import wisemen.common.JSONHelper;
 
 public class WebConfig {
-    private static final String webConfigFile = "src/main/java/wisemen/webConfig.json";
+    private static final String webConfigFile = "src/main/java/*/webConfig.json";
 
     public static String getDefaultBrowser() {
         return JSONHelper.getJSONStringFromJSONFile(webConfigFile, "defaultBrowser");
