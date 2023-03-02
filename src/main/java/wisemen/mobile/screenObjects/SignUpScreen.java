@@ -1,19 +1,15 @@
 package wisemen.mobile.screenObjects;
 
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import javax.lang.model.element.Element;
-import java.awt.*;
+import wisemen.mobile.utils.MobileConfig;
 
 public class SignUpScreen extends BaseScreen {
-    private By usernameTxt = By.id("com.abbemobility.chargersync.dev:id/etUsername");
-    private By registerBtn = By.id("com.abbemobility.chargersync.dev:id/btnRegister");
-    private By alreadyAccountBtn = By.id("com.abbemobility.chargersync.dev:id/tvAlreadyAccount");
+    private String appPackage = MobileConfig.getAppPackage();
+    private By usernameTxt = By.id(appPackage + ":id/etUsername");
+    private By registerBtn = By.id(appPackage + ":id/btnRegister");
+    private By alreadyAccountBtn = By.id(appPackage + ":id/tvAlreadyAccount");
 
     public SignUpScreen(AndroidDriver driver) {
         super(driver, "/");
@@ -24,10 +20,10 @@ public class SignUpScreen extends BaseScreen {
     }
 
     public WebElement getAlreadyAccountBtn() {
-        WebElement alreadyAccountElement = driver.findElement(MobileBy.AndroidUIAutomator(
+        /*WebElement alreadyAccountElement = driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true))" +
-                        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*part_id.*\"))"));
+                        ".scrollIntoView(new UiSelector().resourceId(" + alreadyAccountBtn + "))"));*/
 
-        return alreadyAccountElement;
+        return driver.findElement(alreadyAccountBtn);
     }
 }

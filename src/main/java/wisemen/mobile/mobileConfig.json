@@ -7,5 +7,6 @@
   "appiumURL": "http://localhost:4723/wd/hub/",
   "baseUrl": "https://wisemen.com",
   "loginEndpoint": "/login",
-  "app": "C:\\Users\\mrmuc\\OneDrive\\Documents\\GitHub\\Java_Framework\\src\\main\\resources\\app-dev-debug-ABB.apk"
+  "app": "$PROJECT_DIR$/src/main/resources/app-dev-debug-ABB.apk",
+  "appPackage": "com.abbemobility.chargersync.dev"
 }
