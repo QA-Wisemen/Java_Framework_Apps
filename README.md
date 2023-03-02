@@ -5,9 +5,14 @@
 - Comments are provided in the code for specific explanations
 - Some basic flows from apps are already provided to speed up testing. Or te be used as examples for other tests.
 - Android apps can only be tested with emulators that have the Google Playstore installed
-- Link to the [Appium](https://appium.io/docs/en/about-appium/intro/) documentation and that from [Selenium](https://www.selenium.dev/documentation/)
+- Link to the [Appium](https://appium.io/docs/en/about-appium/intro/) documentation 
 
 ## Running tests
+(If you do it locally)
+1. Have a virtual device that's turned on
+2. Start appium
+3. Execute the tests
+
 
 ## Test set-up
 - Every test gets the '@Test' annotation
