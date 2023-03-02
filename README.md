@@ -8,7 +8,7 @@
 - Link to the [Appium](https://appium.io/docs/en/about-appium/intro/) documentation 
 
 ## Running tests
-(If you do it locally)
+>If you do it locally
 1. Have a virtual device that's turned on
 2. Start appium
 3. Execute the tests
@@ -30,3 +30,15 @@
 - **WebDriverWaitWebElement myElement = wait.until(ExpectedConditions.elementToBeClickable(...)))** --> Is the best way, it only slows down for the time needed, not longer and not shorter. Expected conditions can be further specified
 
 > Waiting in tests can be a solution for certain errors
+
+## Test suite configuration 
+>If you do it locally
+
+In the Appium set up you should make sure that the **android_home** and **java_home** are specified
+![appiumSetup](https://github.com/QA-Wisemen/Java_Framework_Apps/blob/main/src/main/resources/GitImages/EnvironmetVariablesSetUp.jpg)
+
+You should install android [platform tools](https://developer.android.com/studio/releases/platform-tools) and add the folder to your environments variables. 
+<br><br>
+Check if your virtual device is correctly set-up in the [mobileConfig.json](https://github.com/QA-Wisemen/Java_Framework_Apps/blob/main/src/main/java/wisemen/mobile/mobileConfig.json), compare it with the device information in Android Studio for example.
+<br><br>
+You can check if devices are set up in the command line with the command: *adb devices* If you can see a list of devices, good job! :)
