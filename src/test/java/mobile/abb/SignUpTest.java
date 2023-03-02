@@ -1,7 +1,6 @@
 package mobile.abb;
 
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import wisemen.mobile.screenObjects.AllScreens;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -9,9 +8,15 @@ import static com.google.common.truth.Truth.assertThat;
 public class SignUpTest {
     AllScreens screens;
 
-    @BeforeClass
-    public void testSetup(){
+
+    @BeforeMethod
+    public void beforeTest(){
         screens = new AllScreens();
+    }
+
+    @AfterMethod
+    public void afterTest(){
+        screens.quit();
     }
 
     @Test
