@@ -8,6 +8,7 @@ public class AllScreens {
     private AndroidDriver driver;
     public LoginScreen login;
     public SignUpScreen signUpScreen;
+    public RegisterSuccesScreen registerSuccesScreen;
 
 
     //An allScreens object wil make it possible to refer to all the screens from your tests without the hassle of importing them one by one.
@@ -16,6 +17,7 @@ public class AllScreens {
         driver = MobileUtil.createDriverWithApp();
         login = new LoginScreen(driver);
         signUpScreen = new SignUpScreen(driver);
+        registerSuccesScreen = new RegisterSuccesScreen(driver);
     }
 
     public void quit() {
