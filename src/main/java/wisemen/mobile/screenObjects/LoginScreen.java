@@ -8,11 +8,11 @@ import wisemen.mobile.utils.MobileConfig;
 
 public class LoginScreen extends BaseScreen {
     private String appPackage = MobileConfig.getAppPackage();
-    private By usernameTxt = By.id(appPackage + ":id/etEmail");
-    private By passwordTxt = By.id(appPackage + ":id/etPassword");
-    private By loginBtn = By.id(appPackage + ":id/btnLogin");
-    private By errorMsg = By.id(appPackage + ":id/snackbar_text");
-    private By signUpBtn = By.id(appPackage + ":id/tvSignup");
+    private By txtUsername = By.id(appPackage + ":id/etEmail");
+    private By txtPassword = By.id(appPackage + ":id/etPassword");
+    private By btnLogin = By.id(appPackage + ":id/btnLogin");
+    private By msgError = By.id(appPackage + ":id/snackbar_text");
+    private By btnSignUp = By.id(appPackage + ":id/tvSignup");
 
     public LoginScreen(AndroidDriver driver) {
         super(driver);
@@ -21,20 +21,20 @@ public class LoginScreen extends BaseScreen {
     public void fillInUsername(String username) {
         WebElement usernameTxtElement = wait.until(
                 ExpectedConditions.elementToBeClickable(
-                        usernameTxt
+                        txtUsername
                 ));
         usernameTxtElement.sendKeys(username);
     }
 
 
     public void fillInPassword(String password) {
-        driver.findElement(passwordTxt).sendKeys(password);
+        driver.findElement(txtPassword).sendKeys(password);
     }
 
     public void clickLogin() {
         WebElement loginBtnElement = wait.until(
                 ExpectedConditions.elementToBeClickable(
-                        loginBtn
+                        btnLogin
                 ));
         loginBtnElement.click();
     }
@@ -42,7 +42,7 @@ public class LoginScreen extends BaseScreen {
     public void clickSignUp() {
         WebElement signUpBtnElement = wait.until(
                 ExpectedConditions.elementToBeClickable(
-                        signUpBtn
+                        btnSignUp
                 ));
         signUpBtnElement.click();
     }
