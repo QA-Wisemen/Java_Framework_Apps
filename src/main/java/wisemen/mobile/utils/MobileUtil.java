@@ -12,11 +12,11 @@ public class MobileUtil {
         DesiredCapabilities desiredCapabilities = getMandatoryCapabilities();
         //desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, MobileConfig.getAppPackage());
         //desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, MobileConfig.getAppActivity());
-        desiredCapabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
+        desiredCapabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
         desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, false);
-        System.out.println(MobileConfig.getApp());
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        System.out.println(System.getProperty("user.dir") + "\\" + MobileConfig.getApp());
+        //System.out.println(MobileConfig.getApp());
+        //System.out.println("Working Directory = " + System.getProperty("user.dir"));
+        //System.out.println(System.getProperty("user.dir") + "\\" + MobileConfig.getApp());
         desiredCapabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "\\" + MobileConfig.getApp());
         try {
             return new AndroidDriver(new URL(MobileConfig.getAppiumURL()), desiredCapabilities);
