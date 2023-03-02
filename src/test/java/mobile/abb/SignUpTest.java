@@ -5,6 +5,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import wisemen.mobile.screenObjects.AllScreens;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.google.common.truth.Truth.assertThat;
 
 public class SignUpTest {
@@ -13,11 +15,10 @@ public class SignUpTest {
     @BeforeClass
     public void testSetup(){
         screens = new AllScreens();
-        //testObject.loginObject().navigateTo();
     }
 
     @Test
-    public void clickSignUp(){
+    public void clickSignUp() throws InterruptedException {
         screens.login.clickSignUp();
         assertThat(screens.signUpScreen.getAlreadyAccountBtn().isDisplayed()).isTrue();
     }
