@@ -15,13 +15,13 @@ public class SignUpTest {
     }
 
     @Test
-    public void clickSignUp() throws InterruptedException {
+    public void clickSignUp() {
         screens.login.clickSignUp();
         assertThat(screens.signUpScreen.getBtnAlreadyAccount().isDisplayed()).isTrue();
     }
 
     @Test
-    public void signUp() throws InterruptedException {
+    public void signUp() {
         screens.login.clickSignUp();
         screens.signUpScreen.SignUp("Test", "Test@Test.com", "Test123");
         //assertThat(screens.signUpScreen.getBtnAlreadyAccount().isDisplayed()).isTrue();
