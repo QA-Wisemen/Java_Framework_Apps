@@ -3,6 +3,6 @@
   "platformName": "Android",
   "platformVersion": "11",
   "appiumURL": "http://localhost:4723/wd/hub/",
-  "app": "src/app-dev-debug-ABB.apk",
+  "app": "src/main/resources/app-dev-debug-ABB.apk",
   "appPackage": "com.abbemobility.chargersync.dev"
 }
