@@ -41,4 +41,4 @@ You should install android [platform tools](https://developer.android.com/studio
 <br><br>
 Check if your virtual device is correctly set-up in the [mobileConfig.json](https://github.com/QA-Wisemen/Java_Framework_Apps/blob/main/src/main/java/wisemen/mobile/mobileConfig.json), compare it with the device information in Android Studio for example.
 <br><br>
-You can check if devices are set up in the command line with the command: __adb devices__ If you can see a list of devices, good job! :)
+You can check if devices are set up in the command line with the command: *adb devices* If you can see a list of devices, good job! :)
