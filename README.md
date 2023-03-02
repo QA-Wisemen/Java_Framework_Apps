@@ -32,7 +32,7 @@ You can check if devices are set up in the command line with the command: *adb d
    -  **@Test(description="...")**: provides information about tests
    -  **@Test(timeout=...)**: sets a timeout how long the test case can run before automatically failing (in milliseconds)
    -  **@Test(priority=...)**: sets the priority for a test case, the lower the number, the higher the priority (0 = highest priority) No priority set automatically sets it to 0
-   -  **@Test(dependsOnMethods-="...")**: sets a prerequisite for the current test, it will not be executed beforethe other method is executed.
+   -  **@Test(dependsOnMethods="...")**: sets a prerequisite for the current test, it will not be executed beforethe other method is executed.
    -  **@Test(enabled=...)**: enables or disables a test (can be true or false)
    -  **@Test(groups="...")**: tags a test case, grouping them together
 
