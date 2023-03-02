@@ -32,5 +32,5 @@
 > Waiting in tests can be a solution for certain errors
 
 ## Test suite configuration 
-In the Appium set up you should make sure that the android_sk and java_sk are specified
+In the Appium set up you should make sure that the **android_home** and **java_home** are specified
 ![appiumSetup](https://github.com/QA-Wisemen/Java_Framework_Apps/blob/main/src/main/resources/GitImages/EnvironmetVariablesSetUp.jpg)
