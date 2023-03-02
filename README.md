@@ -8,7 +8,7 @@
 - Link to the [Appium](https://appium.io/docs/en/about-appium/intro/) documentation 
 
 ## Running tests
-(If you do it locally)
+>If you do it locally
 1. Have a virtual device that's turned on
 2. Start appium
 3. Execute the tests
@@ -32,5 +32,6 @@
 > Waiting in tests can be a solution for certain errors
 
 ## Test suite configuration 
+>If you do it locally
 In the Appium set up you should make sure that the **android_home** and **java_home** are specified
 ![appiumSetup](https://github.com/QA-Wisemen/Java_Framework_Apps/blob/main/src/main/resources/GitImages/EnvironmetVariablesSetUp.jpg)
