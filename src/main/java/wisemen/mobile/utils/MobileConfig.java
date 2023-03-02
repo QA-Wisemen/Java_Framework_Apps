@@ -6,15 +6,15 @@ import wisemen.common.JSONHelper;
 public class MobileConfig {
     private static final String mobileConfigFile = "src/main/java/wisemen/mobile/mobileConfig.json";
 
-    public static String getDeviceName(){
+    public static String getDeviceName() {
         return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "deviceName");
     }
 
-    public static String getPlatformName(){
+    public static String getPlatformName() {
         return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "platformName");
     }
 
-    public static String getPlatformVersion(){
+    public static String getPlatformVersion() {
         return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "platformVersion");
     }
 

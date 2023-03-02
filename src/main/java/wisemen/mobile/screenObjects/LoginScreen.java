@@ -19,31 +19,21 @@ public class LoginScreen extends BaseScreen {
     }
 
     public void fillInUsername(String username) {
-        WebElement usernameTxtElement = wait.until(
-                ExpectedConditions.elementToBeClickable(
-                        txtUsername
-                ));
+        WebElement usernameTxtElement = wait.until(ExpectedConditions.elementToBeClickable(txtUsername));
         usernameTxtElement.sendKeys(username);
     }
-
 
     public void fillInPassword(String password) {
         driver.findElement(txtPassword).sendKeys(password);
     }
 
     public void clickLogin() {
-        WebElement loginBtnElement = wait.until(
-                ExpectedConditions.elementToBeClickable(
-                        btnLogin
-                ));
+        WebElement loginBtnElement = wait.until(ExpectedConditions.elementToBeClickable(btnLogin));
         loginBtnElement.click();
     }
 
     public void clickSignUp() {
-        WebElement signUpBtnElement = wait.until(
-                ExpectedConditions.elementToBeClickable(
-                        btnSignUp
-                ));
+        WebElement signUpBtnElement = wait.until(ExpectedConditions.elementToBeClickable(btnSignUp));
         signUpBtnElement.click();
     }
 
@@ -51,10 +41,6 @@ public class LoginScreen extends BaseScreen {
         fillInUsername(username);
         fillInPassword(password);
         clickLogin();
-    }
-
-    public void validUserLogin() {
-
     }
 
     public String getErrorMessage() {

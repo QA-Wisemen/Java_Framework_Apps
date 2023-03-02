@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MobileUtil {
-    public static AndroidDriver createDriverWithApp(){
+    public static AndroidDriver createDriverWithApp() {
         DesiredCapabilities desiredCapabilities = getMandatoryCapabilities();
         //desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, MobileConfig.getAppPackage());
         //desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, MobileConfig.getAppActivity());
@@ -25,7 +25,7 @@ public class MobileUtil {
         }
     }
 
-    private static DesiredCapabilities getMandatoryCapabilities(){
+    private static DesiredCapabilities getMandatoryCapabilities() {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, MobileConfig.getDeviceName());
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobileConfig.getPlatformName());

@@ -21,7 +21,7 @@ public class SignUpScreen extends BaseScreen {
         super(driver);
     }
 
-    public void fillInUsername(String username){
+    public void fillInUsername(String username) {
         WebElement usernameTxtElement = wait.until(
                 ExpectedConditions.elementToBeClickable(
                         txtUsername
@@ -29,7 +29,7 @@ public class SignUpScreen extends BaseScreen {
         usernameTxtElement.sendKeys(username);
     }
 
-    public void fillInEmail(String email){
+    public void fillInEmail(String email) {
         WebElement emailTxtElement = wait.until(
                 ExpectedConditions.elementToBeClickable(
                         txtEmail
@@ -37,7 +37,7 @@ public class SignUpScreen extends BaseScreen {
         emailTxtElement.sendKeys(email);
     }
 
-    public void fillInPassword(String password){
+    public void fillInPassword(String password) {
         WebElement passwordTxtElement = wait.until(
                 ExpectedConditions.elementToBeClickable(
                         txtPassword
@@ -45,19 +45,19 @@ public class SignUpScreen extends BaseScreen {
         passwordTxtElement.sendKeys(password);
     }
 
-    public void fillInConfirmPassword(String password){
+    public void fillInConfirmPassword(String password) {
         driver.findElement(txtConfirmPassword).sendKeys(password);
     }
 
-    public void clickConfirmPrivacyPolicy(){
+    public void clickConfirmPrivacyPolicy() {
         driver.findElement(cbPrivacyPolicy).click();
     }
 
-    public void clickSignUp(){
+    public void clickSignUp() {
         getBtnSignUp().click();
     }
 
-    public void SignUp(String username, String email, String password){
+    public void SignUp(String username, String email, String password) {
         fillInUsername(username);
         fillInEmail(email);
         fillInPassword(password);
@@ -72,11 +72,11 @@ public class SignUpScreen extends BaseScreen {
 
     public WebElement getBtnAlreadyAccount() {
         return driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))" +
-                ".scrollIntoView(new UiSelector().textContains(\"" + "already have an account" +"\").instance(0))"));
+                ".scrollIntoView(new UiSelector().textContains(\"" + "already have an account" + "\").instance(0))"));
     }
 
-    public WebElement getBtnSignUp(){
+    public WebElement getBtnSignUp() {
         return driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))" +
-                ".scrollIntoView(new UiSelector().textContains(\"" + "sign up" +"\").instance(0))"));
+                ".scrollIntoView(new UiSelector().textContains(\"" + "sign up" + "\").instance(0))"));
     }
 }

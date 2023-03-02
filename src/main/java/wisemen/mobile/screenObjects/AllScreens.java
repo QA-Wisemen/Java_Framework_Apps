@@ -4,12 +4,10 @@ import io.appium.java_client.android.AndroidDriver;
 import wisemen.mobile.utils.MobileUtil;
 
 public class AllScreens {
-
     private AndroidDriver driver;
     public LoginScreen login;
     public SignUpScreen signUpScreen;
     public RegisterSuccesScreen registerSuccesScreen;
-
 
     //An allScreens object wil make it possible to refer to all the screens from your tests without the hassle of importing them one by one.
     public AllScreens() {

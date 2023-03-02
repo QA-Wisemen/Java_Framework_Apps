@@ -8,14 +8,13 @@ import static com.google.common.truth.Truth.assertThat;
 public class SignUpTest {
     AllScreens screens;
 
-
     @BeforeMethod
-    public void beforeTest(){
+    public void beforeTest() {
         screens = new AllScreens();
     }
 
     @AfterMethod
-    public void afterTest(){
+    public void afterTest() {
         screens.quit();
     }
 
