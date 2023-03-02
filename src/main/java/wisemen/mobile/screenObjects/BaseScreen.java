@@ -9,16 +9,10 @@ import java.time.Duration;
 //Set-up for a basic screen
 public class BaseScreen {
     protected AndroidDriver driver;
-    protected String url;
     protected WebDriverWait wait;
 
-    public BaseScreen(AndroidDriver driver, String endpoint) {
+    public BaseScreen(AndroidDriver driver) {
         this.driver = driver;
-        url = MobileConfig.getBaseUrl() + endpoint;
         wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-    }
-
-    public void navigateTo(){
-        this.driver.get(url);
     }
 }

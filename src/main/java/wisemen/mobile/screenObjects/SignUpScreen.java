@@ -12,7 +12,7 @@ public class SignUpScreen extends BaseScreen {
     private By alreadyAccountBtn = By.id(appPackage + ":id/tvAlreadyAccount");
 
     public SignUpScreen(AndroidDriver driver) {
-        super(driver, "/");
+        super(driver);
     }
 
     public void clickAlreadyAccount() {

@@ -2,11 +2,7 @@
   "deviceName": "Pixel_4_API_30",
   "platformName": "Android",
   "platformVersion": "11",
-  "chromeDriverExecutable": "C:\\dependencies\\chromedriver\\91\\chromedriver.exe",
-  "browserName": "Chrome",
   "appiumURL": "http://localhost:4723/wd/hub/",
-  "baseUrl": "https://wisemen.com",
-  "loginEndpoint": "/login",
-  "app": "$PROJECT_DIR$/src/main/resources/app-dev-debug-ABB.apk",
+  "app": "src/app-dev-debug-ABB.apk",
   "appPackage": "com.abbemobility.chargersync.dev"
 }

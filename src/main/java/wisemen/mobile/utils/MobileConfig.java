@@ -18,14 +18,6 @@ public class MobileConfig {
         return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "platformVersion");
     }
 
-    public static String getChromeDriverExecutable(){
-        return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "chromeDriverExecutable");
-    }
-
-    public static String getBrowsername(){
-        return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "browsername");
-    }
-
     public static String getAppActivity() {
         return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "appActivity");
     }
@@ -40,13 +32,5 @@ public class MobileConfig {
 
     public static String getAppiumURL() {
         return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "appiumURL");
-    }
-
-    public static String getBaseUrl(){
-        return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "baseUrl");
-    }
-
-    public static String getLoginEndpoint() {
-        return JSONHelper.getJSONStringFromJSONFile(mobileConfigFile, "loginEndpoint");
     }
 }

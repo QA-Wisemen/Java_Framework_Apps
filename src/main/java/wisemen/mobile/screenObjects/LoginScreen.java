@@ -16,7 +16,7 @@ public class LoginScreen extends BaseScreen implements ILoginObject {
     private By signUpBtn = By.id(appPackage + ":id/tvSignup");
 
     public LoginScreen(AndroidDriver driver) {
-        super(driver, MobileConfig.getLoginEndpoint());
+        super(driver);
     }
 
     @Override
