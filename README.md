@@ -1,7 +1,7 @@
 # QA: Framework for Automated Testing in Java
 
 ## General
-- The framework can be used for web and mobile testing
+- The framework can be used for mobile testing
 - Comments are provided in the code for specific explanations
 - Some basic flows from apps are already provided to speed up testing. Or te be used as examples for other tests.
 - Android apps can only be tested with emulators that have the Google Playstore installed
