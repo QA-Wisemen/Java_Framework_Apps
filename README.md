@@ -33,5 +33,6 @@
 
 ## Test suite configuration 
 >If you do it locally
+
 In the Appium set up you should make sure that the **android_home** and **java_home** are specified
 ![appiumSetup](https://github.com/QA-Wisemen/Java_Framework_Apps/blob/main/src/main/resources/GitImages/EnvironmetVariablesSetUp.jpg)
