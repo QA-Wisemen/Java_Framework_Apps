@@ -36,3 +36,5 @@
 
 In the Appium set up you should make sure that the **android_home** and **java_home** are specified
 ![appiumSetup](https://github.com/QA-Wisemen/Java_Framework_Apps/blob/main/src/main/resources/GitImages/EnvironmetVariablesSetUp.jpg)
+
+You should install android [platform tools](https://developer.android.com/studio/releases/platform-tools) and add the folder to your environments variables. 
