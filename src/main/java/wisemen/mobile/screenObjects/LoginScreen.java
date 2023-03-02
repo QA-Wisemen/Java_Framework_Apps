@@ -8,11 +8,12 @@ import wisemen.mobile.utils.MobileConfig;
 import wisemen.testObjects.objects.ILoginObject;
 
 public class LoginScreen extends BaseScreen implements ILoginObject {
-    private By usernameTxt = By.id("com.abbemobility.chargersync.dev:id/etEmail");
-    private By passwordTxt = By.id("com.abbemobility.chargersync.dev:id/etPassword");
-    private By loginBtn = By.cssSelector("button");
-    private By errorMsg = By.cssSelector("#flash");
-    private By signUpBtn = By.id("com.abbemobility.chargersync.dev:id/tvSignup");
+    private String appPackage = MobileConfig.getAppPackage();
+    private By usernameTxt = By.id(appPackage + ":id/etEmail");
+    private By passwordTxt = By.id(appPackage + ":id/etPassword");
+    private By loginBtn = By.id(appPackage + ":id/btnLogin");
+    private By errorMsg = By.id(appPackage + ":id/snackbar_text");
+    private By signUpBtn = By.id(appPackage + ":id/tvSignup");
 
     public LoginScreen(AndroidDriver driver) {
         super(driver, MobileConfig.getLoginEndpoint());
@@ -20,35 +21,40 @@ public class LoginScreen extends BaseScreen implements ILoginObject {
 
     @Override
     public void fillInUsername(String username) {
-        /*WebElement usernameTxtElement = wait.until(
+        WebElement usernameTxtElement = wait.until(
                 ExpectedConditions.elementToBeClickable(
                         usernameTxt
-                ));*/
-        driver.findElement(usernameTxt).sendKeys(username);
+                ));
+        usernameTxtElement.sendKeys(username);
     }
 
     @Override
     public void fillInPassword(String password) {
-        WebElement passwordTxtElement = driver.findElement(passwordTxt);
-        passwordTxtElement.sendKeys(password);
+        driver.findElement(passwordTxt).sendKeys(password);
     }
 
     @Override
     public void clickLogin() {
-
+        WebElement loginBtnElement = wait.until(
+                ExpectedConditions.elementToBeClickable(
+                        loginBtn
+                ));
+        loginBtnElement.click();
     }
 
-    public void clickSignUp(){
-        WebElement usernameTxtElement = wait.until(
+    public void clickSignUp() {
+        WebElement signUpBtnElement = wait.until(
                 ExpectedConditions.elementToBeClickable(
                         signUpBtn
                 ));
-        usernameTxtElement.click();
+        signUpBtnElement.click();
     }
 
     @Override
     public void login(String username, String password) {
-
+        fillInUsername(username);
+        fillInPassword(password);
+        clickLogin();
     }
 
     @Override
