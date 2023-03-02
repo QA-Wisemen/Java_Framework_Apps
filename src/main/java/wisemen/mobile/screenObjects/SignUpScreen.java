@@ -1,5 +1,6 @@
 package wisemen.mobile.screenObjects;
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -20,9 +21,10 @@ public class SignUpScreen extends BaseScreen {
     }
 
     public WebElement getAlreadyAccountBtn() {
-        /*WebElement alreadyAccountElement = driver.findElement(MobileBy.AndroidUIAutomator(
+        System.out.println(alreadyAccountBtn.toString());
+        WebElement alreadyAccountElement = driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true))" +
-                        ".scrollIntoView(new UiSelector().resourceId(" + alreadyAccountBtn + "))"));*/
+                        ".scrollIntoView(new UiSelector().resourceId(\".*tvAlreadyAccount.\"))"));
 
         return driver.findElement(alreadyAccountBtn);
     }

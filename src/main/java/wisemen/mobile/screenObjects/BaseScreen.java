@@ -1,6 +1,5 @@
 package wisemen.mobile.screenObjects;
 
-import wisemen.mobile.utils.MobileConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 

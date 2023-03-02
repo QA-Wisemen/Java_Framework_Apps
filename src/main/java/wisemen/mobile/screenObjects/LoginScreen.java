@@ -5,9 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import wisemen.mobile.utils.MobileConfig;
-import wisemen.testObjects.objects.ILoginObject;
 
-public class LoginScreen extends BaseScreen implements ILoginObject {
+public class LoginScreen extends BaseScreen {
     private String appPackage = MobileConfig.getAppPackage();
     private By usernameTxt = By.id(appPackage + ":id/etEmail");
     private By passwordTxt = By.id(appPackage + ":id/etPassword");
@@ -19,7 +18,6 @@ public class LoginScreen extends BaseScreen implements ILoginObject {
         super(driver);
     }
 
-    @Override
     public void fillInUsername(String username) {
         WebElement usernameTxtElement = wait.until(
                 ExpectedConditions.elementToBeClickable(
@@ -28,12 +26,11 @@ public class LoginScreen extends BaseScreen implements ILoginObject {
         usernameTxtElement.sendKeys(username);
     }
 
-    @Override
+
     public void fillInPassword(String password) {
         driver.findElement(passwordTxt).sendKeys(password);
     }
 
-    @Override
     public void clickLogin() {
         WebElement loginBtnElement = wait.until(
                 ExpectedConditions.elementToBeClickable(
@@ -50,19 +47,16 @@ public class LoginScreen extends BaseScreen implements ILoginObject {
         signUpBtnElement.click();
     }
 
-    @Override
     public void login(String username, String password) {
         fillInUsername(username);
         fillInPassword(password);
         clickLogin();
     }
 
-    @Override
     public void validUserLogin() {
 
     }
 
-    @Override
     public String getErrorMessage() {
         return null;
     }
