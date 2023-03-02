@@ -39,5 +39,5 @@ In the Appium set up you should make sure that the **android_home** and **java_h
 
 You should install android [platform tools](https://developer.android.com/studio/releases/platform-tools) and add the folder to your environments variables. 
 <br><br>
-Check if your virtual device is correctly set-up in the [mobileConfig.json](https://github.com/QA-Wisemen/Java_Framework_Apps/blob/main/src/main/java/wisemen/mobile/mobileConfig.json)
+Check if your virtual device is correctly set-up in the [mobileConfig.json](https://github.com/QA-Wisemen/Java_Framework_Apps/blob/main/src/main/java/wisemen/mobile/mobileConfig.json), compare it with the device information in Android Studio for example.
 
