@@ -72,11 +72,12 @@ public class SignUpScreen extends BaseScreen {
 
     public WebElement getBtnAlreadyAccount() {
         return driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))" +
-                ".scrollIntoView(new UiSelector().textContains(\"" + "already have an account" + "\").instance(0))"));
+                ".scrollIntoView(new UiSelector().textContains(\"" + "al een account" + "\").instance(0))"));
+        //"already have an account"
     }
 
     public WebElement getBtnSignUp() {
         return driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))" +
-                ".scrollIntoView(new UiSelector().textContains(\"" + "sign up" + "\").instance(0))"));
+                ".scrollIntoView(new UiSelector().textContains(\"" + "aanmelden" + "\").instance(0))")); //sign up
     }
 }

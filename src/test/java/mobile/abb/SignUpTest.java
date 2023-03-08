@@ -3,6 +3,8 @@ package mobile.abb;
 import org.testng.annotations.*;
 import wisemen.mobile.screenObjects.AllScreens;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.google.common.truth.Truth.assertThat;
 
 public class SignUpTest {
@@ -19,8 +21,9 @@ public class SignUpTest {
     }
 
     @Test
-    public void clickSignUp() {
+    public void clickSignUp() throws InterruptedException {
         screens.login.clickSignUp();
+        TimeUnit.SECONDS.sleep(1);
         assertThat(screens.signUpScreen.getBtnAlreadyAccount().isDisplayed()).isTrue();
     }
 
