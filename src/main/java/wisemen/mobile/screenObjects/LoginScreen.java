@@ -1,49 +1,16 @@
 package wisemen.mobile.screenObjects;
 
-import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import wisemen.mobile.utils.MobileConfig;
 
-public class LoginScreen extends BaseScreen {
-    private String appPackage = MobileConfig.getAppPackage();
-    private By txtUsername = By.id(appPackage + ":id/etEmail");
-    private By txtPassword = By.id(appPackage + ":id/etPassword");
-    private By btnLogin = By.id(appPackage + ":id/btnLogin");
-    private By msgError = By.id(appPackage + ":id/snackbar_text");
-    private By btnSignUp = By.id(appPackage + ":id/tvSignup");
+import java.util.List;
 
-    public LoginScreen(AndroidDriver driver) {
-        super(driver);
-    }
+public interface LoginScreen {
 
-    public void fillInUsername(String username) {
-        WebElement usernameTxtElement = wait.until(ExpectedConditions.elementToBeClickable(txtUsername));
-        usernameTxtElement.sendKeys(username);
-    }
+    void clickSignUp();
 
-    public void fillInPassword(String password) {
-        driver.findElement(txtPassword).sendKeys(password);
-    }
+    void clickLanguages();
 
-    public void clickLogin() {
-        WebElement loginBtnElement = wait.until(ExpectedConditions.elementToBeClickable(btnLogin));
-        loginBtnElement.click();
-    }
+    WebElement getLanguageNorsk();
 
-    public void clickSignUp() {
-        WebElement signUpBtnElement = wait.until(ExpectedConditions.elementToBeClickable(btnSignUp));
-        signUpBtnElement.click();
-    }
 
-    public void login(String username, String password) {
-        fillInUsername(username);
-        fillInPassword(password);
-        clickLogin();
-    }
-
-    public String getErrorMessage() {
-        return null;
-    }
 }

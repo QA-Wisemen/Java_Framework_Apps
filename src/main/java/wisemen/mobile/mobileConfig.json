@@ -1,8 +1,9 @@
 {
-  "deviceName": "OnePlus7T_EEA",
-  "platformName": "Android",
-  "platformVersion": "11",
-  "appiumURL": "http://localhost:4723/wd/hub/",
-  "app": "src/main/resources/app-dev-debug-ABB.apk",
-  "appPackage": "com.abbemobility.chargersync.dev"
+  "AndroidDeviceName": "Pixel_4_API_30",
+  "AndroidPlatformName": "Android",
+  "AndroidPlatformVersion": "11",
+  "AndroidApp": "base.apk",
+  "AndroidAppPackage": "com.abbemobility.chargersync.test",
+  "AndroidAppActivity": "com.abbemobility.chargersync.ui.login.LoginActivity",
+  "appiumURL": "http://localhost:4723/wd/hub/"
 }
