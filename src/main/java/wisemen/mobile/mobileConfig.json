@@ -5,5 +5,5 @@
   "AndroidApp": "ABB.apk",
   "AndroidAppPackage": "com.abbemobility.chargersync.test",
   "AndroidAppActivity": "com.abbemobility.chargersync.ui.login.LoginActivity",
-  "appiumURL": "http://localhost:4723/wd/hub/"
+  "appiumURL": "http://localhost:4723/"
 }

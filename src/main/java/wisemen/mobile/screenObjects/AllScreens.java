@@ -55,7 +55,7 @@ public class AllScreens {
             //File srcFile = driver.getScreenshotAs(OutputType.FILE);
             //String filename = UUID.randomUUID().toString();
             //File targetFile = new File(System.getProperty("user.dir") + "\\src\\main\\resources\\ImagesTestRun\\" + filename + ".png");
-            File targetFile = new File(System.getProperty("user.dir") + "\\target\\Screenshots\\" + filename + ".png");
+            File targetFile = new File(System.getProperty("user.dir") + "/target/Screenshots/" + filename + ".png");
             FileUtils.copyFile(srcFile, targetFile);
             System.out.println("Screenshot");
         } catch (IOException e){

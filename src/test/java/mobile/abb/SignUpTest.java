@@ -68,12 +68,24 @@ public class SignUpTest {
             screens.signUpScreen.signUp("AutomationTest" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i), "test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
             TimeUnit.SECONDS.sleep(2);
 
-            if (screens.signUpScreen.errorMsgExists()){
+
+/*
+            if (screens.registerSuccessScreen.getBtnSuccess().isDisplayed()){
                 screens.registerSuccessScreen.getBtnSuccess().click();
             } else {
                 TimeUnit.SECONDS.sleep(2);
                 screens.screenshot(LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "AccountExists");
             }
+
+ */
+
+            if (screens.signUpScreen.errorMsgExists()){
+                TimeUnit.SECONDS.sleep(2);
+                screens.screenshot(LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "AccountExists");
+            } else {
+                screens.registerSuccessScreen.getBtnSuccess().click();
+            }
+
             TimeUnit.SECONDS.sleep(1);
         }
     }

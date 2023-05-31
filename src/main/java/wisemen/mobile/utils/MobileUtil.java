@@ -43,7 +43,7 @@ public class MobileUtil {
                 capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
                 capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 120);
                 capabilities.setCapability("appActivity",MobileConfig.getAndroidAppActivity());
-                capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "\\src\\main\\resources\\" + MobileConfig.getAndroidApp());
+                capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "/src/main/resources/" + MobileConfig.getAndroidApp());
                 try {
                     driver = new AndroidDriver(new URL(MobileConfig.getAppiumURL()), capabilities);
                 } catch (MalformedURLException e) {

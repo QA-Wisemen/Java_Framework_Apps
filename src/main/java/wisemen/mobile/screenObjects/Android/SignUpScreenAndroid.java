@@ -3,10 +3,7 @@ package wisemen.mobile.screenObjects.Android;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import wisemen.mobile.screenObjects.BaseScreen;
@@ -128,9 +125,10 @@ public class SignUpScreenAndroid extends BaseScreen implements wisemen.mobile.sc
 
     public boolean errorMsgExists(){
         try {
-            driver.findElement(msgError);
+            //WebElement element = wait.until(ExpectedConditions.elementToBeClickable(msgError));;
+            WebElement element = driver.findElement(msgError);
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (Exception e) {
             return false;
         }
     }
