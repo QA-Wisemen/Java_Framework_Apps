@@ -45,7 +45,7 @@ public class SignUpTest {
     @Test
     public void CreatingAccounts() throws InterruptedException {
         for (int i = 0; i < LoginScreenAndroid.LANGUAGES.size(); i++) {
-            System.out.println("Test for " + LoginScreenAndroid.LANGUAGES.get(i));
+            System.out.println("Register test for " + LoginScreenAndroid.LANGUAGES.get(i));
 
             screens.loginScreen.clickLanguages();
             screens.loginScreen.getLanguage(LoginScreenAndroid.LANGUAGES.get(i)).click();
@@ -64,10 +64,52 @@ public class SignUpTest {
             screens.back();
             TimeUnit.SECONDS.sleep(2);
 
-            screens.signUpScreen.signUp("AutomationTest", "test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "1" + "@appwise.be", "Test1234");
+            screens.signUpScreen.signUp("AutomationTest" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i), "test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "1" + "@appwise.be", "Test1234");
             TimeUnit.SECONDS.sleep(2);
             screens.registerSuccessScreen.getBtnSuccess().click();
             TimeUnit.SECONDS.sleep(1);
+        }
+    }
+
+    @Test
+    public void ResetPasswords() throws InterruptedException {
+        for (int i = 0; i < LoginScreenAndroid.LANGUAGES.size(); i++) {
+            System.out.println("Reset password test for " + LoginScreenAndroid.LANGUAGES.get(i));
+
+            screens.loginScreen.clickLanguages();
+            screens.loginScreen.getLanguage(LoginScreenAndroid.LANGUAGES.get(i)).click();
+
+            screens.loginScreen.clickForgotPassword();
+
+            screens.forgotPasswordScreen.fillInEmail("test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "1" + "@appwise.be");
+            screens.forgotPasswordScreen.clickSendMail();
+            TimeUnit.SECONDS.sleep(5);
+
+
+            screens.back();
+            TimeUnit.SECONDS.sleep(2);
+            screens.back();
+            TimeUnit.SECONDS.sleep(2);
+        }
+    }
+
+    @Test
+    public void LoginWithAllAccounts() throws InterruptedException {
+        for (int i = 0; i < LoginScreenAndroid.LANGUAGES.size(); i++) {
+            System.out.println("Login test for " + LoginScreenAndroid.LANGUAGES.get(i));
+
+            screens.loginScreen.clickLanguages();
+            screens.loginScreen.getLanguage(LoginScreenAndroid.LANGUAGES.get(i)).click();
+            screens.loginScreen.login("test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "1" + "@appwise.be", "Test1234");
+            TimeUnit.SECONDS.sleep(8);
+
+            screens.mainScreen.clickAllowLocationWhileUsingApp();
+            TimeUnit.SECONDS.sleep(2);
+            screens.back();
+            screens.mainScreen.openMenu();
+            screens.mainScreen.clickLogout();
+            screens.mainScreen.clickConfirmLogout();
+            TimeUnit.SECONDS.sleep(2);
         }
     }
 }

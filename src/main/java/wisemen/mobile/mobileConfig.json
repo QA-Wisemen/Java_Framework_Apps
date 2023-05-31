@@ -2,7 +2,7 @@
   "AndroidDeviceName": "Pixel_4_API_30",
   "AndroidPlatformName": "Android",
   "AndroidPlatformVersion": "11",
-  "AndroidApp": "base.apk",
+  "AndroidApp": "ABB.apk",
   "AndroidAppPackage": "com.abbemobility.chargersync.test",
   "AndroidAppActivity": "com.abbemobility.chargersync.ui.login.LoginActivity",
   "appiumURL": "http://localhost:4723/wd/hub/"

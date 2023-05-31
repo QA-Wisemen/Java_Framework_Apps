@@ -19,6 +19,7 @@ public class LoginScreenAndroid extends BaseScreen implements wisemen.mobile.scr
     private By msgError = By.id(appPackage + ":id/snackbar_text");
     private By btnSignUp = By.id(appPackage + ":id/tvSignup");
     private By btnLanguages = By.id(appPackage + ":id/tvChangeLanguage");
+    private By btnForgotPassword = By.id(appPackage + ":id/tvForgotPassword");
 
     public static final List<String> LANGUAGES = Arrays.asList(
             "English", "slovenščina", "slovenčina", "polski", "svenska", "עברית", "dansk", "日本語", "Ελληνικά", "italiano", "português",
@@ -44,17 +45,15 @@ public class LoginScreenAndroid extends BaseScreen implements wisemen.mobile.scr
     }
 
     public void clickLogin() {
-        WebElement loginBtnElement = wait.until(ExpectedConditions.elementToBeClickable(btnLogin));
-        loginBtnElement.click();
+        wait.until(ExpectedConditions.elementToBeClickable(btnLogin)).click();
     }
 
     public void clickSignUp() {
-        WebElement signUpBtnElement = wait.until(ExpectedConditions.elementToBeClickable(btnSignUp));
-        signUpBtnElement.click();
+        wait.until(ExpectedConditions.elementToBeClickable(btnSignUp)).click();
     }
 
-    public void login(String username, String password) {
-        fillInUsername(username);
+    public void login(String email, String password) {
+        fillInUsername(email);
         fillInPassword(password);
         clickLogin();
     }
@@ -65,6 +64,10 @@ public class LoginScreenAndroid extends BaseScreen implements wisemen.mobile.scr
 
     public void clickLanguages() {
         wait.until(ExpectedConditions.elementToBeClickable(btnLanguages)).click();
+    }
+
+    public void clickForgotPassword(){
+        wait.until(ExpectedConditions.elementToBeClickable(btnForgotPassword)).click();
     }
 
     public WebElement getLanguageNorsk() {

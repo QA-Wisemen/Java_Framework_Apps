@@ -4,9 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import wisemen.mobile.screenObjects.Android.LoginScreenAndroid;
-import wisemen.mobile.screenObjects.Android.RegisterSuccessScreenAndroid;
-import wisemen.mobile.screenObjects.Android.SignUpScreenAndroid;
+import wisemen.mobile.screenObjects.Android.*;
 import wisemen.mobile.utils.MobileUtil;
 
 import java.io.File;
@@ -18,6 +16,9 @@ public class AllScreens {
     public LoginScreenAndroid loginScreen;
     public SignUpScreenAndroid signUpScreen;
     public RegisterSuccessScreen registerSuccessScreen;
+    public ForgotPasswordScreen forgotPasswordScreen;
+
+    public MainScreen mainScreen;
 
     //An allScreens object wil make it possible to refer to all the screens from your tests without the hassle of importing them one by one.
     public AllScreens() {
@@ -30,6 +31,8 @@ public class AllScreens {
                 loginScreen = new LoginScreenAndroid(driver);
                 signUpScreen = new SignUpScreenAndroid(driver);
                 registerSuccessScreen = new RegisterSuccessScreenAndroid(driver);
+                forgotPasswordScreen = new ForgotPasswordScreenAndroid(driver);
+                mainScreen = new MainScreenAndroid(driver);
                 break;
             case IOS:
                 //searchPage = new ContactSearchPageIOS(driver());
