@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -27,6 +28,7 @@ public class SignUpScreenAndroid extends BaseScreen implements wisemen.mobile.sc
     private By btnAlreadyAccount = By.id(appPackage + ":id/tvAlreadyAccount");
     private By btnLanguages = By.id(appPackage + ":id/tvChangeLanguage");
     private By btnPrivacyPolicy = By.id(appPackage + ":id/tvReadPrivacyPolicy");
+    private By msgError = By.id(appPackage + ":id/snackbar_text");
 
     public SignUpScreenAndroid(AppiumDriver driver) {
         super(driver);
@@ -84,6 +86,7 @@ public class SignUpScreenAndroid extends BaseScreen implements wisemen.mobile.sc
     public void clickLanguages(){
         driver.findElement(btnLanguages).click();
     }
+
     public static final List<String> LANGUAGES = Arrays.asList(
             "English", "slovenščina", "slovenčina", "polski", "svenska", "עברית", "dansk", "日本語", "Ελληνικά", "italiano", "português",
             "magyar", "français", "Türkçe", "norsk", "latviešu", "čeština", "română", "hrvatski", "Nederlands", "Deutsch", "한국어", "suomi", "español",
@@ -100,6 +103,7 @@ public class SignUpScreenAndroid extends BaseScreen implements wisemen.mobile.sc
 
     public static final List<Integer> yCoordinatesPrivacyPolicy = Arrays.asList(
             70, 100, 100, 100, 100, 10, 60, 70, 60, 60, 60, 60, 100, 60, 100, 100, 60, 60, 60, 100, 100, 70, 70, 60, 100, 70);
+
     public void clickPrivacyPolicy(int indexLanguage){
         WebElement privacyPolicy = driver.findElement(btnPrivacyPolicy);
         Point point = privacyPolicy.getLocation();
@@ -120,6 +124,15 @@ public class SignUpScreenAndroid extends BaseScreen implements wisemen.mobile.sc
         args.put("x", point.x + xCoordinatesTermsAndConditions.get(indexLanguage));
         args.put("y", point.y + yCoordinatesTermsAndConditions.get(indexLanguage));
         driver.executeScript("mobile: longClickGesture", args);
+    }
+
+    public boolean errorMsgExists(){
+        try {
+            driver.findElement(msgError);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 
     public WebElement getBtnAlreadyAccount() {

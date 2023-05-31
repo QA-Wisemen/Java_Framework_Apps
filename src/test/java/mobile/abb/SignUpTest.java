@@ -41,6 +41,7 @@ public class SignUpTest {
         assertThat(screens.registerSuccessScreen.getBtnSuccess().isDisplayed()).isTrue();
     }
  */
+    final String testRun = "1";
 
     @Test
     public void CreatingAccounts() throws InterruptedException {
@@ -64,9 +65,15 @@ public class SignUpTest {
             screens.back();
             TimeUnit.SECONDS.sleep(2);
 
-            screens.signUpScreen.signUp("AutomationTest" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i), "test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "1" + "@appwise.be", "Test1234");
+            screens.signUpScreen.signUp("AutomationTest" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i), "test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
             TimeUnit.SECONDS.sleep(2);
-            screens.registerSuccessScreen.getBtnSuccess().click();
+
+            if (screens.signUpScreen.errorMsgExists()){
+                screens.registerSuccessScreen.getBtnSuccess().click();
+            } else {
+                TimeUnit.SECONDS.sleep(2);
+                screens.screenshot(LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "AccountExists");
+            }
             TimeUnit.SECONDS.sleep(1);
         }
     }
@@ -81,7 +88,7 @@ public class SignUpTest {
 
             screens.loginScreen.clickForgotPassword();
 
-            screens.forgotPasswordScreen.fillInEmail("test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "1" + "@appwise.be");
+            screens.forgotPasswordScreen.fillInEmail("test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be");
             screens.forgotPasswordScreen.clickSendMail();
             TimeUnit.SECONDS.sleep(5);
 
@@ -100,7 +107,7 @@ public class SignUpTest {
 
             screens.loginScreen.clickLanguages();
             screens.loginScreen.getLanguage(LoginScreenAndroid.LANGUAGES.get(i)).click();
-            screens.loginScreen.login("test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "1" + "@appwise.be", "Test1234");
+            screens.loginScreen.login("test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
             TimeUnit.SECONDS.sleep(8);
 
             screens.mainScreen.clickAllowLocationWhileUsingApp();
