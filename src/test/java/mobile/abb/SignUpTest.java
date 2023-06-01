@@ -125,8 +125,8 @@ public class SignUpTest {
             if (i == 0){
                 screens.mainScreen.clickAllowLocationWhileUsingApp();
                 TimeUnit.SECONDS.sleep(2);
+                screens.back();
             }
-            screens.back();
             screens.mainScreen.openMenu();
             screens.screenshot(LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "Menu");
             TimeUnit.SECONDS.sleep(2);
