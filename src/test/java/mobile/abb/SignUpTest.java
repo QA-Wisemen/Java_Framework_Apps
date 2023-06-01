@@ -120,13 +120,13 @@ public class SignUpTest {
             screens.loginScreen.clickLanguages();
             screens.loginScreen.getLanguage(LoginScreenAndroid.LANGUAGES.get(i)).click();
             screens.loginScreen.login("test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
-            TimeUnit.SECONDS.sleep(8);
+            TimeUnit.SECONDS.sleep(12);
 
             if (i == 0){
                 screens.mainScreen.clickAllowLocationWhileUsingApp();
                 TimeUnit.SECONDS.sleep(2);
-                screens.back();
             }
+            screens.back();
             screens.mainScreen.openMenu();
             screens.screenshot(LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "Menu");
             TimeUnit.SECONDS.sleep(2);
