@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.google.common.truth.Truth.assertThat;
 
-public class SignUpTest {
+public class ABBTest {
     AllScreens screens;
 
     @BeforeMethod
