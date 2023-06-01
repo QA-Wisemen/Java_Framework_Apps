@@ -12,5 +12,5 @@ public interface LoginScreen {
 
     WebElement getLanguageNorsk();
 
-
+    boolean errorMsgIsDisplayed();
 }

@@ -75,7 +75,7 @@ public class SignUpTest {
 
  */
 
-            if (screens.signUpScreen.errorMsgExists()) {
+            if (screens.signUpScreen.errorMsgIsDisplayed()) {
                 TimeUnit.SECONDS.sleep(2);
                 screens.screenshot(LoginAndroid.LANGUAGES_ENGLISH.get(i) + "AccountExists");
             } else {
@@ -123,7 +123,7 @@ public class SignUpTest {
                 TimeUnit.SECONDS.sleep(2);
             }
 
-            if (screens.connectChargerScreen.scanBarcodeIsDisplayed()) {
+            if (!screens.loginScreen.errorMsgIsDisplayed()) {
                 screens.back();
                 screens.mainScreen.openMenu();
                 screens.screenshot(LoginAndroid.LANGUAGES_ENGLISH.get(i) + "Menu");

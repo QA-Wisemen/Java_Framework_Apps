@@ -116,7 +116,7 @@ public class SignUpAndroid extends BaseScreen implements wisemen.mobile.screenOb
         driver.executeScript("mobile: longClickGesture", args);
     }
 
-    public boolean errorMsgExists(){
+    public boolean errorMsgIsDisplayed(){
         try {
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(msgError));
             return true;

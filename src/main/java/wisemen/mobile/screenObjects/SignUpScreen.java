@@ -9,5 +9,5 @@ public interface SignUpScreen {
     void clickSignUp();
     void signUp(String username, String email, String password);
     void clickAlreadyAccount();
-    boolean errorMsgExists();
+    boolean errorMsgIsDisplayed();
 }

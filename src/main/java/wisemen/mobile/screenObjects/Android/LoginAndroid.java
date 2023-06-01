@@ -79,4 +79,13 @@ public class LoginAndroid extends BaseScreen implements wisemen.mobile.screenObj
         return driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))" +
                 ".scrollIntoView(new UiSelector().textContains(\"" + language + "\"))"));
     }
+
+    public boolean errorMsgIsDisplayed(){
+        try {
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(msgError));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
