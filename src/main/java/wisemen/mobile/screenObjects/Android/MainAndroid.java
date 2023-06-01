@@ -3,12 +3,11 @@ package wisemen.mobile.screenObjects.Android;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.reporters.jq.Main;
 import wisemen.mobile.screenObjects.BaseScreen;
 import wisemen.mobile.screenObjects.MainScreen;
 import wisemen.mobile.utils.MobileConfig;
 
-public class MainScreenAndroid extends BaseScreen implements MainScreen {
+public class MainAndroid extends BaseScreen implements MainScreen {
     private String appPackage = MobileConfig.getAndroidAppPackage();
     private By btnAllowLocationWhileUsingApp = By.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
 
@@ -20,7 +19,7 @@ public class MainScreenAndroid extends BaseScreen implements MainScreen {
 
     private By btnLogoutConfirmation = By.id(appPackage + ":id/md_button_positive");
 
-    public MainScreenAndroid(AppiumDriver driver) {
+    public MainAndroid(AppiumDriver driver) {
         super(driver);
     }
 

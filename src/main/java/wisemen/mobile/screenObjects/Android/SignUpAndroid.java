@@ -2,9 +2,7 @@ package wisemen.mobile.screenObjects.Android;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.TouchAction;
 import org.openqa.selenium.*;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import wisemen.mobile.screenObjects.BaseScreen;
 import wisemen.mobile.utils.MobileConfig;
@@ -14,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SignUpScreenAndroid extends BaseScreen implements wisemen.mobile.screenObjects.SignUpScreen {
+public class SignUpAndroid extends BaseScreen implements wisemen.mobile.screenObjects.SignUpScreen {
     private String appPackage = MobileConfig.getAndroidAppPackage();
     private By txtUsername = By.id(appPackage + ":id/etUsername");
     private By txtEmail = By.id(appPackage + ":id/etEmail");
@@ -27,7 +25,7 @@ public class SignUpScreenAndroid extends BaseScreen implements wisemen.mobile.sc
     private By btnPrivacyPolicy = By.id(appPackage + ":id/tvReadPrivacyPolicy");
     private By msgError = By.id(appPackage + ":id/snackbar_text");
 
-    public SignUpScreenAndroid(AppiumDriver driver) {
+    public SignUpAndroid(AppiumDriver driver) {
         super(driver);
     }
 

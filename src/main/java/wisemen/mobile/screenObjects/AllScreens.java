@@ -9,16 +9,15 @@ import wisemen.mobile.utils.MobileUtil;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.UUID;
 
 public class AllScreens {
     private AppiumDriver driver;
-    public LoginScreenAndroid loginScreen;
-    public SignUpScreenAndroid signUpScreen;
+    public LoginAndroid loginScreen;
+    public SignUpAndroid signUpScreen;
     public RegisterSuccessScreen registerSuccessScreen;
     public ForgotPasswordScreen forgotPasswordScreen;
-
     public MainScreen mainScreen;
+    public ConnectChargerScreen connectChargerScreen;
 
     //An allScreens object wil make it possible to refer to all the screens from your tests without the hassle of importing them one by one.
     public AllScreens() {
@@ -28,11 +27,12 @@ public class AllScreens {
         switch (MobileUtil.executionOS) {
             case ANDROID:
                 //TimeUnit.SECONDS.sleep(5);
-                loginScreen = new LoginScreenAndroid(driver);
-                signUpScreen = new SignUpScreenAndroid(driver);
-                registerSuccessScreen = new RegisterSuccessScreenAndroid(driver);
-                forgotPasswordScreen = new ForgotPasswordScreenAndroid(driver);
-                mainScreen = new MainScreenAndroid(driver);
+                loginScreen = new LoginAndroid(driver);
+                signUpScreen = new SignUpAndroid(driver);
+                registerSuccessScreen = new RegisterSuccessAndroid(driver);
+                forgotPasswordScreen = new ForgotPasswordAndroid(driver);
+                mainScreen = new MainAndroid(driver);
+                connectChargerScreen = new ConnectChargerAndroid(driver);
                 break;
             case IOS:
                 //searchPage = new ContactSearchPageIOS(driver());
@@ -50,15 +50,15 @@ public class AllScreens {
     }
 
     public void screenshot(String filename) {
-        try{
-            File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             //File srcFile = driver.getScreenshotAs(OutputType.FILE);
             //String filename = UUID.randomUUID().toString();
             //File targetFile = new File(System.getProperty("user.dir") + "\\src\\main\\resources\\ImagesTestRun\\" + filename + ".png");
             File targetFile = new File(System.getProperty("user.dir") + "/target/Screenshots/" + filename + ".png");
             FileUtils.copyFile(srcFile, targetFile);
             System.out.println("Screenshot");
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }

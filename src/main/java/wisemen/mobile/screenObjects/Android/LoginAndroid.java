@@ -11,7 +11,7 @@ import wisemen.mobile.utils.MobileConfig;
 import java.util.Arrays;
 import java.util.List;
 
-public class LoginScreenAndroid extends BaseScreen implements wisemen.mobile.screenObjects.LoginScreen {
+public class LoginAndroid extends BaseScreen implements wisemen.mobile.screenObjects.LoginScreen {
     private String appPackage = MobileConfig.getAndroidAppPackage();
     private By txtUsername = By.id(appPackage + ":id/etEmail");
     private By txtPassword = By.id(appPackage + ":id/etPassword");
@@ -31,7 +31,7 @@ public class LoginScreenAndroid extends BaseScreen implements wisemen.mobile.scr
             "Estonian", "Lithuanian"
     );
 
-    public LoginScreenAndroid(AppiumDriver driver) {
+    public LoginAndroid(AppiumDriver driver) {
         super(driver);
     }
 

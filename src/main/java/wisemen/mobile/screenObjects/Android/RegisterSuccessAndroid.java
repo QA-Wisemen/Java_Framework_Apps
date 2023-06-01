@@ -8,11 +8,11 @@ import wisemen.mobile.screenObjects.BaseScreen;
 import wisemen.mobile.screenObjects.RegisterSuccessScreen;
 import wisemen.mobile.utils.MobileConfig;
 
-public class RegisterSuccessScreenAndroid extends BaseScreen implements RegisterSuccessScreen {
+public class RegisterSuccessAndroid extends BaseScreen implements RegisterSuccessScreen {
     private String appPackage = MobileConfig.getAndroidAppPackage();
     private By btnSucces = By.id(appPackage + ":id/btnRegisterSuccess");
 
-    public RegisterSuccessScreenAndroid(AppiumDriver driver) {
+    public RegisterSuccessAndroid(AppiumDriver driver) {
         super(driver);
     }
 

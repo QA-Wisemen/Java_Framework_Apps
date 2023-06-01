@@ -1,14 +1,9 @@
 package mobile.abb;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.*;
 import wisemen.mobile.screenObjects.AllScreens;
-import wisemen.mobile.screenObjects.Android.LoginScreenAndroid;
-import wisemen.mobile.screenObjects.LoginScreen;
-import wisemen.mobile.utils.MobileConfig;
+import wisemen.mobile.screenObjects.Android.LoginAndroid;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -45,27 +40,27 @@ public class SignUpTest {
 
     @Test
     public void CreatingAccounts() throws InterruptedException {
-        for (int i = 0; i < LoginScreenAndroid.LANGUAGES.size(); i++) {
-            System.out.println("Register test for " + LoginScreenAndroid.LANGUAGES.get(i));
+        for (int i = 0; i < LoginAndroid.LANGUAGES.size(); i++) {
+            System.out.println("Register test for " + LoginAndroid.LANGUAGES.get(i));
 
             screens.loginScreen.clickLanguages();
-            screens.loginScreen.getLanguage(LoginScreenAndroid.LANGUAGES.get(i)).click();
+            screens.loginScreen.getLanguage(LoginAndroid.LANGUAGES.get(i)).click();
             screens.loginScreen.clickSignUp();
 
             screens.signUpScreen.clickTermsAndConditions(i);
             TimeUnit.SECONDS.sleep(8);
-            screens.screenshot(LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "TermsAndConditions");
+            screens.screenshot(LoginAndroid.LANGUAGES_ENGLISH.get(i) + "TermsAndConditions");
             TimeUnit.SECONDS.sleep(1);
             screens.back();
             TimeUnit.SECONDS.sleep(2);
             screens.signUpScreen.clickPrivacyPolicy(i);
             TimeUnit.SECONDS.sleep(8);
-            screens.screenshot(LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "PrivacyPolicy");
+            screens.screenshot(LoginAndroid.LANGUAGES_ENGLISH.get(i) + "PrivacyPolicy");
             TimeUnit.SECONDS.sleep(1);
             screens.back();
             TimeUnit.SECONDS.sleep(2);
 
-            screens.signUpScreen.signUp("AutomationTest" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i), "test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
+            screens.signUpScreen.signUp("AutomationTest" + LoginAndroid.LANGUAGES_ENGLISH.get(i), "test+" + LoginAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
             TimeUnit.SECONDS.sleep(2);
 
 
@@ -81,7 +76,7 @@ public class SignUpTest {
 
             if (screens.signUpScreen.errorMsgExists()){
                 TimeUnit.SECONDS.sleep(2);
-                screens.screenshot(LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "AccountExists");
+                screens.screenshot(LoginAndroid.LANGUAGES_ENGLISH.get(i) + "AccountExists");
             } else {
                 screens.registerSuccessScreen.getBtnSuccess().click();
             }
@@ -92,15 +87,15 @@ public class SignUpTest {
 
     @Test
     public void ResetPasswords() throws InterruptedException {
-        for (int i = 0; i < LoginScreenAndroid.LANGUAGES.size(); i++) {
-            System.out.println("Reset password test for " + LoginScreenAndroid.LANGUAGES.get(i));
+        for (int i = 0; i < LoginAndroid.LANGUAGES.size(); i++) {
+            System.out.println("Reset password test for " + LoginAndroid.LANGUAGES.get(i));
 
             screens.loginScreen.clickLanguages();
-            screens.loginScreen.getLanguage(LoginScreenAndroid.LANGUAGES.get(i)).click();
+            screens.loginScreen.getLanguage(LoginAndroid.LANGUAGES.get(i)).click();
 
             screens.loginScreen.clickForgotPassword();
 
-            screens.forgotPasswordScreen.fillInEmail("test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be");
+            screens.forgotPasswordScreen.fillInEmail("test+" + LoginAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be");
             screens.forgotPasswordScreen.clickSendMail();
             TimeUnit.SECONDS.sleep(5);
 
@@ -114,21 +109,23 @@ public class SignUpTest {
 
     @Test
     public void LoginWithAllAccounts() throws InterruptedException {
-        for (int i = 0; i < LoginScreenAndroid.LANGUAGES.size(); i++) {
-            System.out.println("Login test for " + LoginScreenAndroid.LANGUAGES.get(i));
+        for (int i = 0; i < LoginAndroid.LANGUAGES.size(); i++) {
+            System.out.println("Login test for " + LoginAndroid.LANGUAGES.get(i));
 
             screens.loginScreen.clickLanguages();
-            screens.loginScreen.getLanguage(LoginScreenAndroid.LANGUAGES.get(i)).click();
-            screens.loginScreen.login("test+" + LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
-            TimeUnit.SECONDS.sleep(12);
+            screens.loginScreen.getLanguage(LoginAndroid.LANGUAGES.get(i)).click();
+            screens.loginScreen.login("test+" + LoginAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
+            TimeUnit.SECONDS.sleep(10);
 
             if (i == 0){
                 screens.mainScreen.clickAllowLocationWhileUsingApp();
                 TimeUnit.SECONDS.sleep(2);
             }
-            screens.back();
+            if (screens.connectChargerScreen.getScanBarcode().isDisplayed()){
+                screens.back();
+            }
             screens.mainScreen.openMenu();
-            screens.screenshot(LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "Menu");
+            screens.screenshot(LoginAndroid.LANGUAGES_ENGLISH.get(i) + "Menu");
             TimeUnit.SECONDS.sleep(2);
             screens.mainScreen.clickLogout();
             screens.mainScreen.clickConfirmLogout();
