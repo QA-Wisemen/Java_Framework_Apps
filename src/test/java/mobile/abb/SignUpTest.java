@@ -118,7 +118,7 @@ public class SignUpTest {
             screens.loginScreen.login("test+" + LoginAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
 
             if (!screens.loginScreen.errorMsgIsDisplayed()) {
-                TimeUnit.SECONDS.sleep(10);
+                TimeUnit.SECONDS.sleep(5);
                 if (i == 0) {
                     screens.mainScreen.clickAllowLocationWhileUsingApp();
                     TimeUnit.SECONDS.sleep(2);
