@@ -1,15 +1,24 @@
 package mobile.abb;
 
+import org.apache.commons.io.FileUtils;
 import org.testng.annotations.*;
 import wisemen.mobile.screenObjects.AllScreens;
 import wisemen.mobile.screenObjects.Android.LoginAndroid;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import static com.google.common.truth.Truth.assertThat;
 
 public class ABBTest {
+    final String testRun = "1";
     AllScreens screens;
+
+    @BeforeSuite
+    public void beforeSuite() throws IOException {
+        FileUtils.deleteDirectory(new File(System.getProperty("user.dir") + "/target/Screenshots/"));
+    }
 
     @BeforeMethod
     public void beforeTest() throws InterruptedException {
@@ -21,23 +30,6 @@ public class ABBTest {
     public void afterTest() {
         screens.quit();
     }
-
-    /*
-        @Test
-        public void clickSignUp() throws InterruptedException {
-            screens.loginScreen.clickSignUp();
-            TimeUnit.SECONDS.sleep(1);
-            assertThat(screens.signUpScreen.getBtnAlreadyAccount().isDisplayed()).isTrue();
-        }
-
-        @Test
-        public void signUp() {
-            screens.loginScreen.clickSignUp();
-            screens.signUpScreen.signUp("Test", "Test@Test.com", "Test1234");
-            assertThat(screens.registerSuccessScreen.getBtnSuccess().isDisplayed()).isTrue();
-        }
-     */
-    final String testRun = "1";
 
     @Test
     public void CreatingAccounts() throws InterruptedException {
@@ -63,17 +55,6 @@ public class ABBTest {
 
             screens.signUpScreen.signUp("AutomationTest" + LoginAndroid.LANGUAGES_ENGLISH.get(i), "test+" + LoginAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
             TimeUnit.SECONDS.sleep(2);
-
-
-/*
-            if (screens.registerSuccessScreen.getBtnSuccess().isDisplayed()){
-                screens.registerSuccessScreen.getBtnSuccess().click();
-            } else {
-                TimeUnit.SECONDS.sleep(2);
-                screens.screenshot(LoginScreenAndroid.LANGUAGES_ENGLISH.get(i) + "AccountExists");
-            }
-
- */
 
             if (screens.signUpScreen.errorMsgIsDisplayed()) {
                 TimeUnit.SECONDS.sleep(2);
