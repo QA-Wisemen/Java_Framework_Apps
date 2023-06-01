@@ -19,4 +19,13 @@ public class ConnectChargerAndroid extends BaseScreen implements ConnectChargerS
     public WebElement getScanBarcode() {
         return wait.until(ExpectedConditions.elementToBeClickable(btnScanBarcode));
     }
+
+    public boolean scanBarcodeIsDisplayed(){
+        try {
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnScanBarcode));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

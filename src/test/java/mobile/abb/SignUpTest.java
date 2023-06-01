@@ -21,21 +21,22 @@ public class SignUpTest {
     public void afterTest() {
         screens.quit();
     }
-/*
-    @Test
-    public void clickSignUp() throws InterruptedException {
-        screens.loginScreen.clickSignUp();
-        TimeUnit.SECONDS.sleep(1);
-        assertThat(screens.signUpScreen.getBtnAlreadyAccount().isDisplayed()).isTrue();
-    }
 
-    @Test
-    public void signUp() {
-        screens.loginScreen.clickSignUp();
-        screens.signUpScreen.signUp("Test", "Test@Test.com", "Test1234");
-        assertThat(screens.registerSuccessScreen.getBtnSuccess().isDisplayed()).isTrue();
-    }
- */
+    /*
+        @Test
+        public void clickSignUp() throws InterruptedException {
+            screens.loginScreen.clickSignUp();
+            TimeUnit.SECONDS.sleep(1);
+            assertThat(screens.signUpScreen.getBtnAlreadyAccount().isDisplayed()).isTrue();
+        }
+
+        @Test
+        public void signUp() {
+            screens.loginScreen.clickSignUp();
+            screens.signUpScreen.signUp("Test", "Test@Test.com", "Test1234");
+            assertThat(screens.registerSuccessScreen.getBtnSuccess().isDisplayed()).isTrue();
+        }
+     */
     final String testRun = "1";
 
     @Test
@@ -74,7 +75,7 @@ public class SignUpTest {
 
  */
 
-            if (screens.signUpScreen.errorMsgExists()){
+            if (screens.signUpScreen.errorMsgExists()) {
                 TimeUnit.SECONDS.sleep(2);
                 screens.screenshot(LoginAndroid.LANGUAGES_ENGLISH.get(i) + "AccountExists");
             } else {
@@ -117,19 +118,24 @@ public class SignUpTest {
             screens.loginScreen.login("test+" + LoginAndroid.LANGUAGES_ENGLISH.get(i) + testRun + "@appwise.be", "Test1234");
             TimeUnit.SECONDS.sleep(10);
 
-            if (i == 0){
+            if (i == 0) {
                 screens.mainScreen.clickAllowLocationWhileUsingApp();
                 TimeUnit.SECONDS.sleep(2);
             }
-            if (screens.connectChargerScreen.getScanBarcode().isDisplayed()){
+
+            if (screens.connectChargerScreen.scanBarcodeIsDisplayed()) {
                 screens.back();
+                screens.mainScreen.openMenu();
+                screens.screenshot(LoginAndroid.LANGUAGES_ENGLISH.get(i) + "Menu");
+                TimeUnit.SECONDS.sleep(2);
+                screens.mainScreen.clickLogout();
+                screens.mainScreen.clickConfirmLogout();
+                TimeUnit.SECONDS.sleep(2);
+            } else {
+                TimeUnit.SECONDS.sleep(2);
+                System.out.println(LoginAndroid.LANGUAGES_ENGLISH.get(i) + " is not activated");
+                screens.screenshot(LoginAndroid.LANGUAGES_ENGLISH.get(i) + "AccountIsNotActivated");
             }
-            screens.mainScreen.openMenu();
-            screens.screenshot(LoginAndroid.LANGUAGES_ENGLISH.get(i) + "Menu");
-            TimeUnit.SECONDS.sleep(2);
-            screens.mainScreen.clickLogout();
-            screens.mainScreen.clickConfirmLogout();
-            TimeUnit.SECONDS.sleep(2);
         }
     }
 }

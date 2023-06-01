@@ -118,7 +118,7 @@ public class SignUpAndroid extends BaseScreen implements wisemen.mobile.screenOb
 
     public boolean errorMsgExists(){
         try {
-            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(msgError));;
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(msgError));
             return true;
         } catch (Exception e) {
             return false;
