@@ -22,10 +22,6 @@ public class MobileUtil {
     public static AppiumDriver driver;
 
     public static AppiumDriver createDriver() {
-        if (driver != null) {
-            return driver;
-        }
-
         DesiredCapabilities capabilities;
         switch (executionOS) {
             case ANDROID -> {
