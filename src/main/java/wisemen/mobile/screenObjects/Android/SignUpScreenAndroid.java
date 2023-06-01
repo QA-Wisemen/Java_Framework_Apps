@@ -125,8 +125,7 @@ public class SignUpScreenAndroid extends BaseScreen implements wisemen.mobile.sc
 
     public boolean errorMsgExists(){
         try {
-            //WebElement element = wait.until(ExpectedConditions.elementToBeClickable(msgError));;
-            WebElement element = driver.findElement(msgError);
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(msgError));;
             return true;
         } catch (Exception e) {
             return false;
