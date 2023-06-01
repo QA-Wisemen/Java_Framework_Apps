@@ -84,11 +84,6 @@ public class SignUpScreenAndroid extends BaseScreen implements wisemen.mobile.sc
         driver.findElement(btnLanguages).click();
     }
 
-    public static final List<String> LANGUAGES = Arrays.asList(
-            "English", "slovenščina", "slovenčina", "polski", "svenska", "עברית", "dansk", "日本語", "Ελληνικά", "italiano", "português",
-            "magyar", "français", "Türkçe", "norsk", "latviešu", "čeština", "română", "hrvatski", "Nederlands", "Deutsch", "한국어", "suomi", "español",
-            "eesti", "lietuvių");
-
     public static final List<Integer> xCoordinatesTermsAndConditions = Arrays.asList(
             700, 400, 10, 10, 10, 250, 500, 500, 700, 500, 500, 10, 600, 10, 500, 600, 400, 600, 650, 100, 10, 700, 700, 10, 600, 600);
 
